@@ -13,6 +13,7 @@ import { Boom } from '@hapi/boom';
 import QRCode from 'qrcode-terminal';
 import fs from 'fs';
 import path from 'path';
+import pino from 'pino';
 import type { ConnectOptions, ContactInfo, GroupInfo, GroupParticipantAction, MessageInfo } from './types.js';
 import { jidNormalise, bestContactName } from './messages.js';
 import {
@@ -86,7 +87,7 @@ export class WAClient {
         version,
         auth: state,
         printQRInTerminal: false,
-        logger: { level: 'silent' } as never,
+        logger: pino({ level: 'silent' }) as never,
         browser: ['wacli', 'Chrome', '0.5.0'],
         syncFullHistory: true,
       });
