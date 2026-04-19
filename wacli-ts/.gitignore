@@ -1,0 +1,9 @@
+node_modules/
+dist/
+bundle/
+*.db
+*.db-shm
+*.db-wal
+*.lock
+.wacli/
+session/
